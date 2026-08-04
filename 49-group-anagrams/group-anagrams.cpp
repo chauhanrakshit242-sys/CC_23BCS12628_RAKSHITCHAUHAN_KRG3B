@@ -9,14 +9,16 @@ public:
             count[ch-'a']++;
         }
         string res="";
-        for(int i = 0;i<26;i++)
-        {
-            if(count[i]!=0)
-            {
-                res.push_back(i+'a');
-                res.push_back(count[i]);
-            }
-        }
+
+for (int i = 0; i < 26; i++)
+{
+    if (count[i] > 0)
+    {
+        res.push_back('a' + i);
+        res += to_string(count[i]);
+        res.push_back('#');
+    }
+}
         return res;
     }
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
